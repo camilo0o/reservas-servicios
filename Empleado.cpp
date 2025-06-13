@@ -35,3 +35,5 @@ void Empleado::setNombre(string nombre) {
 void Empleado::setCalificacion(float calificacion) {
     this->calificacion = calificacion;
 }
+
+//hay que ver bien los Dt
