@@ -9,7 +9,7 @@ class Usuario {
 private:
     string nombre;
     string correoElectronico;
-    string id:
+    string id;
     string contrasenia;
 public:
     Usuario();
