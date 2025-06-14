@@ -2,6 +2,8 @@
 #define ORGANIZACION_H
 #include <string>
 #include <vector>
+
+#include "Sucursal.h"
 using namespace std;
 
 
@@ -11,6 +13,7 @@ private:
     string nombre;
     string direccion;
     vector<string*> contactos;
+    vector<Sucursal*> sucursales;
 
 public:
     Organizacion(int id, string nombre, string direccion);
