@@ -15,10 +15,10 @@ public:
     Usuario();
     Usuario(string id, string nombre, string correoElectronico, string contrasenia);
 
-    string getNombre();
-    string getCorreoElectronico();
-    string getContrasenia();
-    string getId();
+    virtual string getNombre();
+    virtual string getCorreoElectronico();
+    virtual string getContrasenia();
+    virtual string getId();
 
     void setNombre(string nombre);
     void setCorreoElectronico(string correoElectronico);
