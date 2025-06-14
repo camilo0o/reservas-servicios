@@ -9,6 +9,6 @@ public:
     Administrador(Organizacion *org);
     ~Administrador();
     void setOrganizacion(Organizacion *org);
-    Organizacion* getOrganizacion();
+    Organizacion* getOrganizacion() const;
 };
 #endif
