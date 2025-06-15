@@ -2,26 +2,31 @@
 #define EMPLEADO_H
 #include <string>
 #include <vector>
-#include "HorarioDia.h"
+#include "Horario.h"
+#include "Excepcion.h"
 using namespace std;
 
 
 class Empleado {
 private:
     string nombre;
-    vector<HorarioDia*> horarioSemana;
     float calificacion;
+    vector<Horario*> horarios;
+    vector<Excepcion*> excepciones;
 
 public:
     Empleado(string nombre);
     ~Empleado();
 
     string getNombre();
-    vector<HorarioDia*>* getHorarioSemana();
     float getCalificacion();
-    void setHorarioSemana(HorarioDia*);
+    vector<Horario*>* getHorarios();
+    vector<Excepcion*>* getExcepciones();
+
     void setNombre(string nombre);
     void setCalificacion(float calificacion);
+    void setHorario(Horario* horario);
+    void setExcepcion(Excepcion* excepcion);
 };
 
 
