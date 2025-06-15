@@ -6,17 +6,21 @@ Empleado::Empleado(string nombre) {
 }
 
 Empleado::~Empleado() {
-    for (HorarioDia* horario : horarioSemana) {
-        delete horario;
+    for (Horario* h : horarios) {
+        delete h;
     }
-    horarioSemana.clear();
+    horarios.clear();
+    for (Excepcion* e : excepciones) {
+        delete e;
+    }
+    excepciones.clear();
 }
 
 string Empleado::getNombre() {
     return nombre;
 }
 
-vector<HorarioDia*>* Empleado::getHorarioSemana() {
+vector<DtHorarioDia*>* Empleado::getHorarioSemana() {
     return &horarioSemana;
 }
 
@@ -24,7 +28,15 @@ float Empleado::getCalificacion() {
     return calificacion;
 }
 
-void Empleado::setHorarioSemana(HorarioDia* horario) {
+vector<Horario*>* Empleado::getHorarios() {
+    return &horarios;
+}
+
+vector<Excepcion*>* Empleado::getExcepciones() {
+    return &excepciones;
+}
+
+void Empleado::setHorarioSemana(DtHorarioDia* horario) {
     horarioSemana.push_back(horario);
 }
 
@@ -36,4 +48,10 @@ void Empleado::setCalificacion(float calificacion) {
     this->calificacion = calificacion;
 }
 
-//hay que ver bien los Dt
+void Empleado::setHorario(Horario* horario) {
+    horarios.push_back(horario);
+}
+
+void Empleado::setExcepcion(Excepcion* excepcion){
+    excepciones.push_back(excepcion);
+}
