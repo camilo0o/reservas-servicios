@@ -1,12 +1,14 @@
 #include "Reserva.h"
 
-Reserva::Reserva(DtFecha *fecha, bool cancelar, Estado estado, Sucursal* sucursal, Empleado* empleado, Servicio* servicio) {
+Reserva::Reserva(DtFecha *fecha, bool cancelar, Estado estado, Sucursal* sucursal, Empleado* empleado, Servicio* servicio,int puntuacion, string comentario ) {
     this->fecha = fecha;
     this->cancelar = cancelar;
     this->estado = estado;
     this->sucursal = sucursal;
     this->empleado = empleado;
     this->servicio = servicio;
+    this->puntuacion = puntuacion;
+    this->comentario = comentario;
 }
 
 DtFecha* Reserva::getFecha() {
@@ -33,6 +35,13 @@ Servicio* Reserva::getServicio() {
     return this->servicio;
 }
 
+string Reserva::getComentario() {
+    return this->comentario;
+}
+int Reserva::getPuntuacion() {
+    return this->puntuacion;
+}
+
 void Reserva::setFecha(DtFecha* fecha) {
     this->fecha = fecha;
 }
@@ -55,6 +64,12 @@ void Reserva::setEmpleado(Empleado* empleado) {
 
 void Reserva::setServicio(Servicio* servicio) {
     this->servicio = servicio;
+}
+void Reserva::setPuntuacion(int puntuacion) {
+    this->puntuacion = puntuacion;
+}
+void Reserva::setComentario(string comentario) {
+    this->comentario = comentario;
 }
 
 
