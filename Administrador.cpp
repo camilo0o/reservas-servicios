@@ -1,7 +1,6 @@
 #include "Administrador.h"
-#include <iostream>
 using namespace std;
-Administrador::Administrador(Organizacion *org){
+Administrador::Administrador(Organizacion *org, string id, string nombre, string correo, string contrasenia):Usuario(id, nombre, correo, contrasenia){
     this->organizacion = org;
 }
 Organizacion *Administrador::getOrganizacion() const {

@@ -10,7 +10,7 @@ private:
 
 public:
     Cliente();
-    Cliente(vector<string*> contactos);
+    Cliente(vector<string*> contactos, string id, string nombre, string correo, string contrasenia);
 
     vector<string*> getContactos();
     vector<string*> setContactos(vector<string*> contactos);

@@ -4,7 +4,7 @@ using namespace std;
 Cliente::Cliente() {
     this->contactos = {};
 }
-Cliente::Cliente(vector<string *> contactos) {
+Cliente::Cliente(vector<string *> contactos, string id, string nombre, string correo, string contrasenia):Usuario(id, nombre, correo, contrasenia) {
     this->contactos = contactos;
 }
 vector<string *> Cliente::getContactos() {
