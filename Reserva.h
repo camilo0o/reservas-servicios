@@ -9,7 +9,7 @@
 class Reserva {
 private:
     DtFecha* fecha;
-    bool cancelar;
+    DtFecha* fechaCancelacion;
     Estado estado;
     int puntuacion;
     string comentario;
@@ -19,11 +19,11 @@ private:
 
 
 public:
-    Reserva(DtFecha* fecha, bool cancelar, Estado estado, Sucursal* sucursal, Empleado* empleado, Servicio* servicio, int puntuacion, string comentario);
+    Reserva(DtFecha* fecha, Sucursal* sucursal, Empleado* empleado, Servicio* servicio);
     ~Reserva();
 
     DtFecha* getFecha();
-    bool getCancelar();
+    DtFecha* getFechaCancelacion();
     Estado getEstado();
     string getComentario();
     int getPuntuacion();
@@ -34,7 +34,7 @@ public:
     void setPuntuacion(int puntuacion);
     void setComentario(string comentario);
     void setFecha(DtFecha* fecha);
-    void setCancelar(bool cancelar);
+    void setFechaCancelacion(DtFecha* fecha);
     void setEstado(Estado estado);
     void setSucursal(Sucursal* sucursal);
     void setEmpleado(Empleado* empleado);

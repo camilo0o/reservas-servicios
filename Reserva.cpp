@@ -1,22 +1,22 @@
 #include "Reserva.h"
 
-Reserva::Reserva(DtFecha *fecha, bool cancelar, Estado estado, Sucursal* sucursal, Empleado* empleado, Servicio* servicio,int puntuacion, string comentario ) {
+Reserva::Reserva(DtFecha *fecha, Sucursal* sucursal, Empleado* empleado, Servicio* servicio ) {
     this->fecha = fecha;
-    this->cancelar = cancelar;
-    this->estado = estado;
+    this->estado = Estado::activa;
     this->sucursal = sucursal;
     this->empleado = empleado;
     this->servicio = servicio;
-    this->puntuacion = puntuacion;
-    this->comentario = comentario;
+    this->puntuacion = 0;
+    this->fechaCancelacion = nullptr;
+    this->comentario = "";
 }
 
 DtFecha* Reserva::getFecha() {
     return this->fecha;
 }
 
-bool Reserva::getCancelar() {
-    return this->cancelar;
+DtFecha* Reserva::getFechaCancelacion() {
+    return this->fechaCancelacion;
 }
 
 Estado Reserva::getEstado() {
@@ -38,6 +38,7 @@ Servicio* Reserva::getServicio() {
 string Reserva::getComentario() {
     return this->comentario;
 }
+
 int Reserva::getPuntuacion() {
     return this->puntuacion;
 }
@@ -46,8 +47,8 @@ void Reserva::setFecha(DtFecha* fecha) {
     this->fecha = fecha;
 }
 
-void Reserva::setCancelar(bool cancelar) {
-    this->cancelar = cancelar;
+void Reserva::setFechaCancelacion(DtFecha* fecha) {
+    this->fechaCancelacion = fecha;
 }
 
 void Reserva::setEstado(Estado estado) {
@@ -65,9 +66,11 @@ void Reserva::setEmpleado(Empleado* empleado) {
 void Reserva::setServicio(Servicio* servicio) {
     this->servicio = servicio;
 }
+
 void Reserva::setPuntuacion(int puntuacion) {
     this->puntuacion = puntuacion;
 }
+
 void Reserva::setComentario(string comentario) {
     this->comentario = comentario;
 }
