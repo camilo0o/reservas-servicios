@@ -41,4 +41,4 @@ public:
     void setServicio(Servicio* servicio);
 
 };
-#define
+#endif
